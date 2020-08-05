@@ -1,0 +1,58 @@
+{
+  "name": "walnut-teame-sienergy",
+  "version": "1.0.0",
+  "description": "тестовое задание для walnut-teame",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitaliyBru/Walnut-Team-SiEnergy.git"
+  },
+  "author": "Vitaly Bryukhovetsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VitaliyBru/Walnut-Team-SiEnergy/issues"
+  },
+  "homepage": "https://github.com/VitaliyBru/Walnut-Team-SiEnergy#readme",
+  "devDependencies": {
+    "@babel/core": "7.11.1",
+    "@babel/preset-env": "7.11.0",
+    "autoprefixer": "9.8.6",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "6.0.3",
+    "css-loader": "4.2.0",
+    "file-loader": "6.0.0",
+    "image-webpack-loader": "6.0.0",
+    "imagemin": "^6.0.0",
+    "imagemin-gifsicle": "7.0.0",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-pngquant": "9.0.0",
+    "imagemin-svgo": "8.0.0",
+    "imagemin-webpack-plugin": "2.4.2",
+    "img-loader": "3.0.1",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "4.14.1",
+    "postcss-loader": "3.0.0",
+    "sass-loader": "9.0.3",
+    "style-loader": "1.2.1",
+    "svg-url-loader": "6.0.0",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "browserslist": [
+    "last 2 version",
+    "IE 11",
+    "IE 10"
+  ],
+  "dependencies": {
+    "es6-promise-promise": "1.0.0",
+    "whatwg-fetch": "3.3.1"
+  }
+}
