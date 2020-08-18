@@ -1,10 +1,12 @@
 {
-  "name": "walnut-teame-sienergy",
+  "name": "walnut-team-sienergy",
   "version": "1.0.0",
-  "description": "тестовое задание для walnut-teame",
-  "main": "webpack.config.js",
+  "description": "тестовое задание для walnut-team",
+  "main": "src/js/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "set NODE_ENV=production&& webpack --mode production",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -53,6 +55,8 @@
   ],
   "dependencies": {
     "es6-promise-promise": "1.0.0",
+    "inputmask": "5.0.5",
+    "swiper": "6.1.1",
     "whatwg-fetch": "3.3.1"
   }
 }

@@ -1,0 +1,134 @@
+@mixin tabletWide {
+  @media (max-width: $tabletMax) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tabletMaxStandard) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobileMax) {
+    @content;
+  }
+}
+
+@mixin customWidth ($brakePoint) {
+  @media (max-width: $brakePoint) {
+    @content;
+  }
+}
+
+@mixin _font($font-family, $font-size, $font-weight, $line-height, $letter-spacing, $font-style: normal) {
+  font-family: $font-family, Arial, sans-serif;
+  font-size: $font-size / $rootSize + rem;
+  font-weight: $font-weight;
+  font-style: $font-style;
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing / $font-size + em;
+  }
+
+  @if $line-height {
+    line-height: $line-height / $font-size + em;
+  } @else {
+    line-height: 1.15em;
+  }
+}
+
+@mixin fontGothic($font-size, $line-height: false, $letter-spacing: false) {
+  @include _font("Gothic", $font-size, $gothicWeight, $line-height, $letter-spacing);
+}
+
+@mixin fontGothicB($font-size, $line-height: false, $letter-spacing: false) {
+  @include _font("Gothic", $font-size, $gothicBoldWeight, $line-height, $letter-spacing);
+}
+
+@mixin fontGothicI($font-size, $line-height: false, $letter-spacing: false) {
+  @include _font("Gothic", $font-size, $gothicWeight, $line-height, $letter-spacing, italic);
+}
+
+@mixin fontGothicBI($font-size, $line-height: false, $letter-spacing: false) {
+  @include _font("Gothic", $font-size, $gothicBoldWeight, $line-height, $letter-spacing, italic);
+}
+
+//@mixin interaction($hoverColor: false, $activeColor: false) {
+//  @if $hoverColor or $activeColor {
+//    transition: background-color;
+//  }
+//  @if $hoverColor == false or $activeColor == false {
+//    transition: opacity;
+//  }
+//  transition-duration: 200ms;
+//  &:hover {
+//    @if $hoverColor {
+//      background-color: $hoverColor;
+//    } @else {
+//      opacity: 0.8;
+//    }
+//  }
+//
+//  &:active {
+//    @if $activeColor {
+//      background-color: $activeColor;
+//    } @else {
+//      opacity: 0.6;
+//    }
+//  }
+//}
+
+@mixin buttonTemplate($width, $bgColor, $tag: "button") {
+  display: inline-block;
+  width: $width;
+  border-radius: 8px;
+  outline: none;
+  background-color: $bgColor;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: pointer;
+
+  @if $tag == "button" {
+    border: none;
+  }
+
+  @if $tag == "a" {
+    text-decoration: none;
+  }
+}
+
+//@mixin button($height, $letterSpacing: 1.6px, $fontSize: 16px, $lineHeight: 26px) {
+//  @include fontGilroy($fontSize, $lineHeight, $letterSpacing);
+//
+//  display: inline-block;
+//  padding: {
+//    top: ($height - $lineHeight) / 2;
+//    left: 20px;
+//    bottom: ($height - $lineHeight) / 2;
+//    right: 20px;
+//  };
+//  color: $white;
+//  background-color: $blueLight;
+//  border-radius: 10px;
+//  text-align: center;
+//  cursor: pointer;
+//
+//  .safari & {
+//    padding: {
+//      top: ($height - $lineHeight) / 2 + 4px;
+//      left: 20px;
+//      bottom: ($height - $lineHeight) / 2 - 4px;
+//      right: 20px;
+//    };
+//  }
+//
+//  @include interaction();
+//}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

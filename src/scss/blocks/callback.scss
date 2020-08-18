@@ -1,0 +1,256 @@
+.callback {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($black, 0.5);
+  z-index: 2;
+
+  .js-callback & {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-height: 550px) {
+      align-items: flex-start;
+    }
+  }
+}
+
+.callback__container {
+  position: relative;
+  padding: 0 45px;
+  width: 692px;
+  max-width: 95vw;
+  background-image: linear-gradient( 90deg, $grey-white 0%, $white 100%);
+
+  .js-success & {
+    min-height: 550px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-image: url("../img/bg-beard.jpg");
+  }
+}
+
+.callback__close {
+  display: block;
+  position: absolute;
+  top: 65px;
+  right: 48px;
+  width: 21px;
+  height: 22px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='21px' height='22px'%3E%3Cpath fill-rule='evenodd' fill='rgb(238, 238, 238)' d='M20.865,19.264 L18.378,21.874 L10.500,13.610 L2.622,21.874 L0.134,19.264 L8.012,11.000 L0.134,2.735 L2.622,0.125 L10.500,8.390 L18.378,0.125 L20.865,2.735 L12.988,11.000 L20.865,19.264 Z'/%3E%3C/svg%3E");
+  transition: background-image;
+  transition-duration: $transitionTime;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='21px' height='22px'%3E%3Cpath fill-rule='evenodd' fill='%238e8e8e' d='M20.865,19.264 L18.378,21.874 L10.500,13.610 L2.622,21.874 L0.134,19.264 L8.012,11.000 L0.134,2.735 L2.622,0.125 L10.500,8.390 L18.378,0.125 L20.865,2.735 L12.988,11.000 L20.865,19.264 Z'/%3E%3C/svg%3E");
+  }
+}
+
+.callback__content {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.js-success .callback__content {
+  display: none;
+}
+
+.callback__heading {
+  @include fontGothicB(30px, 30px, 2.9px);
+
+  margin: 61px 0 23px;
+  color: $black;
+  text-transform: uppercase;
+}
+
+.callback__text {
+  @include fontGothic(18px, 30px, 0.05px);
+
+  color: $black;
+}
+
+.callback__form {
+  padding: 16px 0 0;
+}
+
+.callback__label {
+  @include fontGothic(12px, 30px);
+
+  display: inline-block;
+  padding: 10px 0 0 33px;
+  width: 291px;
+  color: $grey-medium-2;
+  background-color: $white;
+
+  &:first-child {
+    margin: 0 14px 7px 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.callback__input {
+  margin: -40px 0 0 -33px;
+  padding: 20px 0 0 29px;
+  width: calc(100% + 33px);
+  height: 78px;
+  border: 1px solid transparent;
+  outline: none;
+  vertical-align: top;
+  background-color: transparent;
+
+  &:invalid {
+    border-color: $red;
+  }
+}
+
+.callback__input,
+.callback__input::placeholder {
+  @include fontGothic(21px, 30px);
+
+  color: $black;
+}
+
+.callback__invalid {
+  display: none;
+}
+
+.callback__form:invalid .callback__invalid {
+  @include fontGothic(14px, 30px);
+
+  display: inline;
+  color: $red;
+}
+
+.callback__permission {
+  @include fontGothic(14px, 21px);
+
+  position: relative;
+  padding: 16px 0 0 50px;
+  color: $grey-medium-2;
+}
+
+.callback__checkbox {
+  display: inline-block;
+  margin: 6px 15px -20px -48px;
+  width: 30px;
+  height: 30px;
+  background-color: $white;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 15px rgba(3, 43, 56, 0.05);
+  vert-align: top;
+  cursor: pointer;
+}
+
+input:invalid ~ .callback__checkbox {
+  border-color: $red;
+}
+
+input:checked ~ .callback__checkbox {
+  background-repeat: no-repeat;
+  background-position: 6px 3px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='21px'%3E%3Cpath fill-rule='evenodd' fill='rgb(1, 158, 196)' d='M17.688,1.076 C16.638,1.448 15.614,1.953 14.649,2.565 L14.660,2.565 C13.964,2.976 13.382,3.636 13.132,4.379 C12.791,5.400 13.246,6.170 14.027,6.538 C14.327,6.679 14.284,6.662 14.564,6.817 C16.757,8.037 17.693,10.582 16.707,13.526 C15.326,17.655 10.686,21.001 6.343,21.001 C-0.634,21.001 -1.112,13.327 4.159,7.977 C7.885,4.192 12.794,1.476 17.726,0.690 L17.726,0.691 L17.752,0.690 C17.863,0.690 17.921,0.779 17.884,0.888 C17.855,0.974 17.774,1.048 17.688,1.076 '/%3E%3C/svg%3E");
+}
+
+.callback__submit {
+  @include buttonTemplate(450px, $blue);
+  @include fontGothicB(24px, 30px);
+
+  display: block;
+  margin: 31px auto 101px;
+  padding: 22px 0;
+  border-radius: unset;
+  color: $white;
+  transition: background-color;
+  transition-duration: $transitionTime;
+
+  &:hover {
+    background-color: $blue-deep;
+  }
+}
+
+.callback__success {
+  display: none;
+  padding-bottom: 358px;
+
+  .js-success & {
+    display: block;
+  }
+}
+
+// Мобильный размер (768px 320px)
+
+@include mobile {
+  .callback__container {
+    padding: 50px 15px;
+  }
+
+  .callback__content {
+    max-height: calc(100vh - 80px);
+  }
+
+  .callback__close {
+    top: 15px;
+    right: 10px;
+  }
+
+  .callback__heading {
+    margin: 11px 0 23px;
+    text-align: center;
+  }
+
+  .callback__text {
+    text-align: center;
+  }
+
+  .callback__label {
+    width: 100%;
+  }
+
+  .callback__submit {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .callback__success {
+    padding-bottom: 219px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

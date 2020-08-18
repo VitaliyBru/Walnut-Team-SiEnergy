@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Gothic";
+  src: local("Century Gothic"),
+  local("Century-Gothic"),
+  url("../fonts/CenturyGothic.woff2") format("woff2"),
+  url("../fonts/CenturyGothic.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic";
+  src: local("Century Gothic Bold"),
+  local("Century-Gothic-Bold"),
+  url("../fonts/CenturyGothic-Bold.woff2") format("woff2"),
+  url("../fonts/CenturyGothic-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic";
+  src: local("Century Gothic Bold Italic"),
+  local("Century-Gothic-Bold-Italic"),
+  url("../fonts/CenturyGothic-BoldItalic.woff2") format("woff2"),
+  url("../fonts/CenturyGothic-BoldItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic";
+  src: local("Century Gothic Italic"),
+  local("Century-Gothic-Italic"),
+  url("../fonts/CenturyGothic-Italic.woff2") format("woff2"),
+  url("../fonts/CenturyGothic-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}

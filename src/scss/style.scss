@@ -1,0 +1,13 @@
+@import "global/normalize";
+@import "global/variables";
+@import "global/fonts";
+@import "global/mixins";
+@import "global/global";
+//
+//@import "plugins-style/swiper";
+//@import "plugins-style/pagination";
+@import "~swiper/swiper-bundle.css";
+
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/callback";

@@ -15,10 +15,7 @@ module.exports = {
   context: path.join(__dirname, `src`),
 
   entry: {
-    app: [
-      `./js/app.js`,
-      `./scss/style.scss`
-    ],
+    app: `./js/app.js`,
   },
 
   output: {
@@ -68,7 +65,9 @@ module.exports = {
           {
             loader: `file-loader`,
             options: {
-              name: `[path][name].[ext]`,
+              name: `[name].[ext]`,
+              outputPath: `img/`,
+              publicPath: `../img/`
             },
           },
           {
@@ -125,16 +124,13 @@ module.exports = {
 
     new CleanWebpackPlugin(),
 
-    new CopyWebpackPlugin(
-        [
-          {from: `./img`, to: `img`}
-        ],
-        {
-          ignore: [
-            {glob: `svg/*`}
-          ]
-        }
-    ),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: `./img`, to: `img`,},
+        {from: `./../app`,},
+        // {ignore: [{glob: `svg/*`},]},
+      ],
+    }),
 
     new ImageminPlugin({
       test: /\.(png|svg|jpe?g|gif)$/i,
